@@ -1,5 +1,6 @@
-import { Scene, Color, DirectionalLight, HemisphereLight, Group, CameraHelper } from 'three';
-import { Cube } from '../objects/Cube';
+import { Scene, Color, DirectionalLight, HemisphereLight, Group, CameraHelper, AxesHelper } from 'three';
+import Car from '../objects/car/Car';
+
 
 class Scene1 extends Scene {
 	constructor() {
@@ -9,33 +10,18 @@ class Scene1 extends Scene {
 	}
 
 	create() {
-		this.brick = new Cube(2,new Color('orangered').convertSRGBToLinear());
-		this.brick.position.set(0,0,0);
-		this.brick.castShadow=true;
-
-		this.floor = new Cube(7, new Color('rgb(255,255,255)').convertSRGBToLinear());
-		this.floor.position.set(0,-4.5,0);
-		this.floor.receiveShadow= true;
-
-		// this.grupo = new Group();
-		// this.grupo.add(this.brick, this.floor);
-		this.add(this.brick, this.floor);
-		
-
-
-		const ambientLight = new HemisphereLight(0xffffbb, 0x080820, .5);
+		this.car = new Car();
+		this.add(this.car);
+		const ambientLight = new HemisphereLight(0xffffbb, 0x080820, 4);
 		const light = new DirectionalLight(0xffffff, 1.0);
-		light.position.set(1,1,0);
-		light.castShadow=true;
-
-		const helper = new CameraHelper(light.shadow.camera);
-
+		
+		const helper = new AxesHelper(3);
 
 		this.add(light, ambientLight, helper);
 	}
 
 	update() {
-		
+		this.car.update();
 	}
 }
 

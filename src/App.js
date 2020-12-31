@@ -26,9 +26,8 @@ export class App {
 		this.renderer.outputEncoding = sRGBEncoding;
 
 		// ## Light's config
-		this.renderer.physicallyCorrectLights = true;
-		this.renderer.shadowMap.enabled = true;
 		
+
 		this.container.appendChild(this.renderer.domElement);
 		this.onResize();
 		this.render();
