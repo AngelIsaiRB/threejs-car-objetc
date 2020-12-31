@@ -1,0 +1,19 @@
+{
+  "name": "three-template",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "webpack-dev-server --open",
+    "build": "webpack --mode=production"
+  },
+  "dependencies": {
+    "eventemitter3": "^4.0.7",
+    "three": "^0.124.0"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^6.4.1",
+    "html-webpack-plugin": "^4.5.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.1"
+  }
+}
